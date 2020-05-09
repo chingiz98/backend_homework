@@ -35,7 +35,7 @@
 #### Имя пользователя БД: postgres
 #### Пароль БД: 1
 # Описание API
-##Регистрация 
+## Регистрация 
 SignUp [HttpPost("/auth/signup")]
 
 Body:
@@ -61,7 +61,7 @@ Content-Type: application/json
 }
 ```
 
-##Авторизация 
+## Авторизация 
 LogIn [HttpPost("/auth/signup")]
 
 Body:
@@ -86,7 +86,7 @@ Content-Type: application/json
 }
 ```
 
-##Изменить данные пользователя 
+## Изменить данные пользователя 
 UpdateInfo [HttpPost("/user/updateInfo")]
 
 - Функция использует очередь сообщений
@@ -107,7 +107,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Удалить профиль пользователя 
+## Удалить профиль пользователя 
 DeleteProfile [HttpDelete("/user/deleteProfile")]
 
 Пример вызова:
@@ -122,7 +122,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Открыть новый счет 
+## Открыть новый счет 
 Create [HttpPost("/accounts/create")]
 
 Parameters:
@@ -144,7 +144,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Закрыть счет 
+## Закрыть счет 
 Close [HttpPost("/accounts/close")]
 
 Parameters:
@@ -166,7 +166,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Переименовать счет 
+## Переименовать счет 
 Rename [HttpPost("/accounts/rename")]
 
 - Функция использует очередь сообщений
@@ -187,7 +187,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Получить счета пользователя 
+## Получить счета пользователя 
 GetAccounts [HttpGet("/accounts/getAccounts")]
 
 Пример вызова:
@@ -215,7 +215,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 ]
 ```
 
-##Пополнить счет 
+## Пополнить счет 
 Deposit [HttpPost("/accounts/deposit")]
 
 - Функция использует очередь сообщений
@@ -236,7 +236,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Выполнить перевод между счетами 
+## Выполнить перевод между счетами 
 MakeTransaction [HttpPost("/accounts/makeTransaction")]
 
 Parameters:
@@ -257,7 +257,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 }
 ```
 
-##Получить историю операций по счету 
+## Получить историю операций по счету 
 GetTransactions [HttpGet("/accounts/getTransactions")]
 
 Parameters:
