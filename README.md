@@ -54,7 +54,7 @@ Content-Type: application/json
 }
 ```
 ##### Ответ:
-```
+```json
 {
  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMTcxNjksImV4cCI6MTU4OTAxOTg2OSwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.KjTzHASevBrFu68ZQDIK5bNLzxohov_O2Myuv1_YuNw",
  "expiration": "2020-05-09T10:24:29Z"
@@ -79,7 +79,7 @@ Content-Type: application/json
 }
 ```
 ##### Ответ:
-```
+```json
 {
  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMTgwMTIsImV4cCI6MTU4OTAyMDcxMiwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.GJOe5l33dvDfzRE7v3g3uMsrnGZSSTb8gr7Snafk2Yo",
  "expiration": "2020-05-09T10:38:32Z"
@@ -101,7 +101,7 @@ POST https://localhost:5001/user/updateInfo?username=newtest1@mail.com&name=newN
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMjI2NjUsImV4cCI6MTU4OTAyNTM2NSwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.gVDx8tDcCyr_sLUln6sXFTv831ow2FwqLFMo6W2SuGk
 ```
 ##### Ответ:
-```
+```json
 {
   "result": "ok"
 }
@@ -116,7 +116,7 @@ DELETE https://localhost:5001/user/deleteProfile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMjI2NjUsImV4cCI6MTU4OTAyNTM2NSwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.gVDx8tDcCyr_sLUln6sXFTv831ow2FwqLFMo6W2SuGk
 ```
 ##### Ответ:
-```
+```json
 {
   "result": "ok"
 }
@@ -134,7 +134,7 @@ POST https://localhost:5001/accounts/create?name=NewAccount
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMjI2NjUsImV4cCI6MTU4OTAyNTM2NSwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.gVDx8tDcCyr_sLUln6sXFTv831ow2FwqLFMo6W2SuGk
 ```
 ##### Ответ:
-```
+```json
 {
   "id": 4000000002,
   "owner_id": "3deb61d0-1b52-49bf-baf7-2f141487c968",
@@ -156,7 +156,7 @@ POST https://localhost:5001/accounts/close?id=4000000002
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 {
   "id": 4000000002,
   "owner_id": "3deb61d0-1b52-49bf-baf7-2f141487c968",
@@ -181,7 +181,7 @@ POST https://localhost:5001/accounts/rename?accountId=4000000002&name=NewNameFor
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 {
   "result": "ok"
 }
@@ -196,7 +196,7 @@ GET https://localhost:5001/accounts/getAccounts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 [
   {
     "id": 4000000002,
@@ -230,7 +230,7 @@ POST https://localhost:5001/accounts/deposit?id=4000000003&amount=2500
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 {
   "result": "ok"
 }
@@ -251,7 +251,7 @@ POST https://localhost:5001/accounts/makeTransaction?fromAccountId=4000000003&to
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 {
   "result": "ok"
 }
@@ -270,7 +270,7 @@ GET https://localhost:5001/accounts/getTransactions?accountId=4000000003
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjNkZWI2MWQwLTFiNTItNDliZi1iYWY3LTJmMTQxNDg3Yzk2OCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Im1vZGVyYXRpb24iLCJuYmYiOjE1ODkwMzA0NDQsImV4cCI6MTU4OTAzMzE0NCwiaXNzIjoiQmFja2VuZFNlcnZlciIsImF1ZCI6IkJhY2tlbmRDbGllbnQifQ.QkuBwoN_yI7mFlkAoApzw4fFmhctitPy6DUrknxk9Ms
 ```
 ##### Ответ:
-```
+```json
 [
   {
     "to_id": 4000000003,
