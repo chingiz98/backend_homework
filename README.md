@@ -33,7 +33,7 @@
     	FOREIGN KEY (to_id) REFERENCES accounts(id)
     );
 #### Имя пользователя БД: postgres
-#### Пароль БД: 12345
+#### Пароль БД: 1
 # Описание API
 ##Регистрация 
 SignUp [HttpPost("/auth/signup")]

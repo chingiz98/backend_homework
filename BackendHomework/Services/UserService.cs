@@ -96,7 +96,7 @@ namespace BackendHomework.Services
         }
         private NpgsqlConnection CreateConnection()
         {
-            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=12345;Pooling=false");
+            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=1;Pooling=false");
 
             return connection;
         }
