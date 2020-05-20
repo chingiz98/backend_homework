@@ -41,7 +41,7 @@ namespace BackendHomework.Services
 
                 try
                 {
-                    string sqlQuery = "SELECT * FROM accounts WHERE owner_id = @ownerId";
+                    string sqlQuery = "SELECT * FROM accounts WHERE owner_id = @ownerId AND closed = false ORDER BY id";
                     return (await connection.QueryAsync<AccountDTO>(sqlQuery, new
                     {
                         ownerId = ownerId
@@ -63,7 +63,7 @@ namespace BackendHomework.Services
 
                 try
                 {
-                    string sqlQuery = "SELECT * FROM transactions WHERE from_id = @accountId OR to_id = @accountId";
+                    string sqlQuery = "SELECT * FROM transactions WHERE from_id = @accountId OR to_id = @accountId ORDER BY timestamp DESC";
                     return (await connection.QueryAsync<TransactionDTO>(sqlQuery, new
                     {
                         accountId
@@ -185,7 +185,7 @@ namespace BackendHomework.Services
                         @"BEGIN TRANSACTION; 
                         UPDATE accounts SET amount = amount - @amount WHERE id = @fromId AND closed != true;
                         UPDATE accounts SET amount = amount + @amount WHERE id = @toId AND closed != true;
-                        INSERT INTO transactions (to_id, from_id, amount, type, comment, timestamp) VALUES (@fromId, @toId, @amount, @type, @comment, @timestamp);
+                        INSERT INTO transactions (to_id, from_id, amount, type, comment, timestamp) VALUES (@toId, @fromId, @amount, @type, @comment, @timestamp);
                         COMMIT;";
                     await connection.ExecuteAsync(sqlQuery, new
                     {
@@ -206,7 +206,7 @@ namespace BackendHomework.Services
         }
         private NpgsqlConnection CreateConnection()
         {
-            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=1;Pooling=false");
+            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=12345;Pooling=false");
 
             return connection;
         }

@@ -47,7 +47,7 @@ namespace BackendHomework
             services.AddScoped<RenameAccountRequestHandler>();
             services.AddScoped<GetTransactionsRequestHandler>();
 
-            services.AddScoped<DeleteProfileRequestHandler>();
+            services.AddScoped<ProfileRequestsHandler>();
             services.AddScoped<UpdateUserInfoRequestHandler>();
             
             services.AddScoped<MakeDepositConsumer>();

@@ -45,6 +45,25 @@ namespace BackendHomework.Services
                 }
             }
         }
+
+        public async Task<UserDto> GetUserById(Guid id)
+        {
+            using (var connection = CreateConnection())
+            {
+                connection.Open();
+                try
+                {
+                    string sqlQuery = @"SELECT * FROM users WHERE id = @id";
+                    return await connection.QuerySingleAsync<UserDto>(sqlQuery, new {id});
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw new Exception("Invalid user id!");
+                }
+            }
+        }
+
         public async Task CloseUserProfile(Guid id)
         {
             using (var connection = CreateConnection())
@@ -96,7 +115,7 @@ namespace BackendHomework.Services
         }
         private NpgsqlConnection CreateConnection()
         {
-            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=1;Pooling=false");
+            var connection = new NpgsqlConnection($"server=localhost;database=test;userid=postgres;password=12345;Pooling=false");
 
             return connection;
         }

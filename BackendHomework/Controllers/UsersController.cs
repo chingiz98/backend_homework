@@ -12,14 +12,14 @@ namespace BackendHomework.Controllers
     [Rights]
     public class UsersController : Controller
     {
-        private readonly DeleteProfileRequestHandler _deleteProfileRequestHandler;
+        private readonly ProfileRequestsHandler _profileRequestsHandler;
         private readonly UpdateUserInfoRequestHandler _updateUserInfoRequestHandler;
         public UsersController(
-            DeleteProfileRequestHandler deleteProfileRequestHandler, 
+            ProfileRequestsHandler profileRequestsHandler, 
             UpdateUserInfoRequestHandler updateUserInfoRequestHandler
             )
         {
-            _deleteProfileRequestHandler = deleteProfileRequestHandler;
+            _profileRequestsHandler = profileRequestsHandler;
             _updateUserInfoRequestHandler = updateUserInfoRequestHandler;
         }
         [HttpDelete("/user/deleteProfile")]
@@ -27,7 +27,7 @@ namespace BackendHomework.Controllers
         {
             Guid ownerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
                                       throw new Exception("Invalid token"));
-            _deleteProfileRequestHandler.Handle(ownerId);
+            _profileRequestsHandler.HandleDelete(ownerId);
             return Task.FromResult<IActionResult>(Json(new
             {
                 result = "ok"
@@ -43,6 +43,21 @@ namespace BackendHomework.Controllers
             {
                 result = "ok"
             }));
+        }
+        
+        [HttpGet("/user/getInfo")]
+        public async Task<IActionResult> GetUserInfo()
+        {
+            Guid ownerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
+                                      throw new Exception("Invalid token"));
+            var result = await _profileRequestsHandler.HandleGetInfo(ownerId);
+            return Json(new
+            {
+                id = result.Id,
+                name = result.Name,
+                username = result.Username,
+                status = result.Status
+            });
         }
     }
 }
