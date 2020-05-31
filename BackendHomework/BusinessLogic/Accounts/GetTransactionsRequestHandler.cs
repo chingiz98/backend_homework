@@ -15,12 +15,20 @@ namespace BackendHomework.BusinessLogic.Accounts
             _accountsService = accountsService;
         }
 
-        public async Task<List<TransactionDTO>> Handle(long accountId, Guid ownerId)
+        public async Task<List<TransactionDTO>> HandleGet(long accountId, Guid ownerId)
         {
             AccountDTO account = await _accountsService.GetAccountById(accountId);
             if(!account.Owner_id.Equals(ownerId))
                 throw new Exception("The account you requesting transactions history is not yours!");
             List<TransactionDTO> res = await _accountsService.GetTransactionsByAccountId(accountId);
+
+            return res;
+        }
+        
+        public async Task<List<TransactionDTO>> HandleGetAll(Guid ownerId)
+        {
+            
+            List<TransactionDTO> res = await _accountsService.GetAllTransactions(ownerId);
 
             return res;
         }

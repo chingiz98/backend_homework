@@ -47,7 +47,15 @@ namespace BackendHomework.Controllers
         {
             Guid ownerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
                                       throw new Exception("Invalid token"));
-            return await _getAccountsRequestHandler.Handle(ownerId);
+            return await _getAccountsRequestHandler.HandleGetAccounts(ownerId);
+        }
+        
+        [HttpGet("/accounts/getAccountById")]
+        public async Task<AccountDTO> GetAccountById(long id)
+        {
+            Guid ownerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
+                                      throw new Exception("Invalid token"));
+            return await _getAccountsRequestHandler.HandleGetAccountById(ownerId, id);
         }
         
         [HttpGet("/accounts/getTransactions")]
@@ -57,11 +65,21 @@ namespace BackendHomework.Controllers
                                       throw new Exception("Invalid token"));
             
             
-            return await _getTransactionsRequestHandler.Handle(accountId, ownerId);
+            return await _getTransactionsRequestHandler.HandleGet(accountId, ownerId);
+        }
+        
+        [HttpGet("/accounts/getAllTransactions")]
+        public async Task<List<TransactionDTO>> GetAllTransactions()
+        {
+            Guid ownerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ??
+                                      throw new Exception("Invalid token"));
+            
+            return await _getTransactionsRequestHandler.HandleGetAll(ownerId);
         }
         
         [HttpPost("/accounts/makeTransaction")]
-        public async Task<IActionResult> MakeTransaction(long fromAccountId,
+        public async Task<IActionResult> MakeTransaction(
+            long fromAccountId,
             long toAccountId,
             decimal amount,
             string comment = "")

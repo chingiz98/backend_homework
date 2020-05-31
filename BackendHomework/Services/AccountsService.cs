@@ -41,7 +41,7 @@ namespace BackendHomework.Services
 
                 try
                 {
-                    string sqlQuery = "SELECT * FROM accounts WHERE owner_id = @ownerId AND closed = false ORDER BY id";
+                    string sqlQuery = "SELECT * FROM accounts WHERE owner_id = @ownerId AND closed = false ORDER BY id DESC";
                     return (await connection.QueryAsync<AccountDTO>(sqlQuery, new
                     {
                         ownerId = ownerId
@@ -77,6 +77,30 @@ namespace BackendHomework.Services
                 
             }
         }
+
+        public async Task<List<TransactionDTO>> GetAllTransactions(Guid ownerId)
+        {
+            using (var connection = CreateConnection())
+            {
+                connection.Open();
+
+                try
+                {
+                    string sqlQuery = "SELECT t.* FROM transactions t LEFT JOIN accounts accfrom ON (accfrom.id = t.from_id OR accfrom.id = NULL) INNER JOIN accounts accto ON (accto.id = t.to_id) WHERE accto.owner_id = @ownerId OR accfrom.owner_id = @ownerId ORDER BY timestamp DESC";
+                    return (await connection.QueryAsync<TransactionDTO>(sqlQuery, new
+                    {
+                        ownerId
+                    })).ToList();
+                } 
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw new Exception("Error while getting accounts!");
+                }
+                
+            }
+        }
+
         public async Task<AccountDTO> CreateAccount(string accountName, Guid ownerId)
         {
             using (var connection = CreateConnection())

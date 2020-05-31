@@ -10,6 +10,7 @@ namespace BackendHomework.Services.Interfaces
         Task<AccountDTO> GetAccountById(long id);
         Task<List<AccountDTO>> GetAccountsByOwnerId(Guid ownerId);
         Task<List<TransactionDTO>> GetTransactionsByAccountId(long accountId);
+        Task<List<TransactionDTO>> GetAllTransactions(Guid ownerId);
         Task<AccountDTO> CreateAccount(string name, Guid ownerId);
         Task<AccountDTO> CloseAccount(long id, Guid ownerId);
         Task<AccountDTO> RenameAccount(long id, Guid ownerId, string name);

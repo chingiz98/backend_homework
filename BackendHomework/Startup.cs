@@ -132,7 +132,7 @@ namespace BackendHomework
                 });
             });
             
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

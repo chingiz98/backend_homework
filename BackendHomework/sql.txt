@@ -23,8 +23,8 @@ CREATE TABLE transactions (
 	"to_id" bigint NOT NULL,
 	"from_id" bigint,
 	"amount" numeric NOT NULL,
-	"comment" text,
-	"type" text,
+	"comment" text DEFAULT '',
+	"type" text DEFAULT '',
 	"timestamp" timestamp NOT NULL,
 	FOREIGN KEY (to_id) REFERENCES accounts(id)
 );
